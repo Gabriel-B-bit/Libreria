@@ -1,161 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>CSS Template - Modernizado</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  /* Reset básico */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f9fc;
-    color: #333;
-    margin: 0;
-  }
-
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #3f8efc, #00d2ff);
-    padding: 30px 20px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
-
-  header h2 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  }
-
-  /* Contenedor principal con flexbox para columnas */
-  section {
-    display: flex;
-    max-width: 1100px;
-    margin: 30px auto;
-    gap: 30px;
-    padding: 0 20px;
-  }
-
-  /* Navegación (columna izquierda) */
-  nav {
-    flex: 1 1 30%;
-    background-color: #d9f6ff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 132, 255, 0.2);
-  }
-
-  nav ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  nav ul li {
-    margin-bottom: 15px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #0077cc;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  nav ul li a:hover {
-    background-color: #00b4ffcc;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-
-  /* Artículo (columna derecha) */
-  article {
-    flex: 2 1 70%;
-    background-color: white;
-    padding: 25px 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-
-  article h1 {
-    margin-top: 0;
-    color: #0077cc;
-    border-bottom: 2px solid #00b4ff;
-    padding-bottom: 8px;
-    font-size: 2rem;
-  }
-
-  article p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  /* Footer */
-  footer {
-    background: linear-gradient(135deg, #3f8efc, #00d2ff);
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: auto;
-    font-size: 1rem;
-    box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
-  }
-
-  /* Responsive */
-  @media (max-width: 700px) {
-    section {
-      flex-direction: column;
-      padding: 0 15px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Librería</title>
+  <link rel="icon" type="image/x-icon" href="/Imagen/favicon.ico" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #e6f7ff;
+      color: #222;
     }
 
-    nav, article {
-      flex: 1 1 100%;
+    header {
+      background-color: #3da9fc;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      float: left;
+      width: 30%;
+      height: 300px;
+      background: #80c1ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px #3390ff88;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 15px;
     }
 
     nav ul li a {
-      font-size: 1.3rem;
-      padding: 12px 16px;
+      color: #003f7f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
-  }
-</style>
+
+    nav ul li a:hover {
+      color: #001f3f;
+      text-decoration: underline;
+    }
+
+    section {
+      float: left;
+      width: 70%;
+      padding: 20px;
+      background-color: #cce6ff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      min-height: 300px;
+    }
+
+    section#Inicio, section#Acerca\ de, section#Contacto {
+      margin-bottom: 20px;
+      background: white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: #333;
+    }
+
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    h1, h2 {
+      font-family: 'Cambria', serif;
+      color: #004a99;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      color: #004a99;
+      font-weight: 600;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #004a99;
+      padding: 8px 12px;
+      text-align: left;
+      color: #004a99;
+    }
+
+    th {
+      background-color: #3399ff;
+      color: white;
+    }
+
+    footer {
+      clear: both;
+      background-color: #3da9fc;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-weight: 600;
+      margin-top: 40px;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav, section {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Bienvenido a mi sistema de librería</h1>
+  </header>
 
-<header>
-  <h2>Cities</h2>
-</header>
-
-<section>
   <nav>
     <ul>
-      <li><a href="#">London</a></li>
-      <li><a href="#">Paris</a></li>
-      <li><a href="#">Tokyo</a></li>
+      <li><a href="#Inicio">Inicio</a></li>
+      <li><a href="#Acerca de">Acerca de</a></li>
+      <li><a href="#Contacto">Contacto</a></li>
     </ul>
   </nav>
-  
-  <article>
-    <h1>London</h1>
-    <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-  </article>
-</section>
 
-<footer>
-  <p>Footer</p>
-</footer>
+  <section id="Inicio">
+    <h2>INICIO</h2>
+    <p>En nuestra librería, te ofrecemos una vasta selección de libros, artículos y revistas para todos los gustos y edades. Ya sea que busques novedades literarias, clásicos o temas especializados, tenemos algo para ti. Nos apasiona fomentar el hábito de la lectura y brindar un espacio donde cada lector pueda encontrar su próxima gran historia.</p>
+  </section>
 
+  <section id="Acerca de">
+    <h2>ACERCA DE</h2>
+    <p>Desde nuestra fundación en 2025, nos hemos comprometido a ser un lugar de encuentro para amantes de los libros, un espacio donde el conocimiento y la imaginación se encuentran. Con el paso de los años, hemos crecido, pero siempre hemos mantenido nuestra misión de ofrecer calidad, atención personalizada y una experiencia única para cada visitante.</p>
+  </section>
+
+  <section>
+    <p>En nuestra librería encontrarás una amplia variedad de libros, desde novelas clásicas hasta las últimas novedades del mercado. Disfruta de un ambiente tranquilo para leer o encontrar el libro perfecto para tu próximo viaje literario.</p>
+
+    <h2>Algunos de nuestros géneros más populares:</h2>
+    <ul>
+      <li>Ficción</li>
+      <li>Ciencia Ficción</li>
+      <li>Fantasía</li>
+      <li>Historia</li>
+      <li>Psicología</li>
+    </ul>
+
+    <h2>Precios de los libros más vendidos</h2>
+    <table>
+      <tr>
+        <th>Libro</th>
+        <th>Autor</th>
+        <th>Precio</th>
+      </tr>
+      <tr>
+        <td>El Quijote</td>
+        <td>Miguel de Cervantes</td>
+        <td>$15.00</td>
+      </tr>
+      <tr>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>$12.50</td>
+      </tr>
+      <tr>
+        <td>Harry Potter</td>
+        <td>J.K. Rowling</td>
+        <td>$20.00</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="Contacto">
+    <h2>Contacto</h2>
+    <p><strong>Gabriel B</strong><br />
+      Teléfono: <a href="tel:+593962678882">0962678882</a><br />
+      Correo: <a href="mailto:lgbonilla2@espe.edu.ec">lgbonilla2@espe.edu.ec</a>
+    </p>
+    <p><strong>Luis B</strong><br />
+      Teléfono: <a href="tel:+593962678882">0962678882</a><br />
+      Correo: <a href="mailto:bonillagabriel1307@gmail.com">bonillagabriel1307@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Librería</p>
+  </footer>
 </body>
 </html>
