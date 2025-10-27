@@ -1,181 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Librería</title>
-  <link rel="icon" type="image/x-icon" href="/Imagen/favicon.ico" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #e6f7ff;
-      color: #222;
-    }
+<title>Librería</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="Imagen/favicon.ico">
 
-    header {
-      background-color: #3da9fc;
-      padding: 30px;
-      text-align: center;
-      font-size: 35px;
-      color: white;
-      font-weight: 700;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    nav {
-      float: left;
-      width: 30%;
-      height: 300px;
-      background: #80c1ff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: inset 0 0 10px #3390ff88;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e6f7ff;
+  color: #222;
+  margin: 0;
+}
 
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
+/* Encabezado */
+header {
+  background-color: #3da9fc;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  border-bottom: 4px solid #0077cc;
+}
 
-    nav ul li {
-      margin-bottom: 15px;
-    }
+/* Contenedor principal en Flexbox */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
 
-    nav ul li a {
-      color: #003f7f;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
+/* Navegación lateral */
+nav {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: #80c1ff;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-    nav ul li a:hover {
-      color: #001f3f;
-      text-decoration: underline;
-    }
+/* Lista del menú */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-    section {
-      float: left;
-      width: 70%;
-      padding: 20px;
-      background-color: #cce6ff;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      min-height: 300px;
-    }
+nav ul li {
+  margin-bottom: 15px;
+}
 
-    section#Inicio, section#Acerca\ de, section#Contacto {
-      margin-bottom: 20px;
-      background: white;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      padding: 15px 20px;
-      border-radius: 8px;
-      color: #333;
-    }
+nav ul li a {
+  color: #003f7f;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 
-    section::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #001f3f;
+}
 
-    h1, h2 {
-      font-family: 'Cambria', serif;
-      color: #004a99;
-      margin-top: 0;
-    }
+/* Contenido principal */
+article {
+  flex: 3;
+  background-color: #cce6ff;
+  border-radius: 8px;
+  padding: 20px;
+}
 
-    p {
-      line-height: 1.5;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
+/* Tabla de precios */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+th, td {
+  border: 1px solid #004a99;
+  padding: 8px 12px;
+  text-align: left;
+}
 
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: #004a99;
-      font-weight: 600;
-    }
+th {
+  background-color: #3399ff;
+  color: white;
+}
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+/* Pie de página */
+footer {
+  background-color: #3da9fc;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  margin-top: 20px;
+}
 
-    th, td {
-      border: 1px solid #004a99;
-      padding: 8px 12px;
-      text-align: left;
-      color: #004a99;
-    }
+/* Diseño responsivo */
+@media (max-width: 800px) {
+  section {
+    flex-direction: column;
+  }
 
-    th {
-      background-color: #3399ff;
-      color: white;
-    }
-
-    footer {
-      clear: both;
-      background-color: #3da9fc;
-      padding: 15px;
-      text-align: center;
-      color: white;
-      font-weight: 600;
-      margin-top: 40px;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav, section {
-        float: none;
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+  nav, article {
+    max-width: 100%;
+  }
+}
+</style>
 </head>
-<body>
-  <header>
-    <h1>Bienvenido a mi sistema de librería</h1>
-  </header>
 
+<body>
+
+<header>
+  <h2>Bienvenido a mi sistema de librería</h2>
+</header>
+
+<section>
   <nav>
     <ul>
       <li><a href="#Inicio">Inicio</a></li>
-      <li><a href="#Acerca de">Acerca de</a></li>
+      <li><a href="#AcercaDe">Acerca de</a></li>
       <li><a href="#Contacto">Contacto</a></li>
     </ul>
   </nav>
-
-  <section id="Inicio">
-    <h2>INICIO</h2>
+  
+  <article>
+    <h1 id="Inicio">Inicio</h1>
+    <img src="Imagen/Libros.jpg" alt="Portada de la librería" width="400">
     <p>En nuestra librería, te ofrecemos una vasta selección de libros, artículos y revistas para todos los gustos y edades. Ya sea que busques novedades literarias, clásicos o temas especializados, tenemos algo para ti. Nos apasiona fomentar el hábito de la lectura y brindar un espacio donde cada lector pueda encontrar su próxima gran historia.</p>
-  </section>
 
-  <section id="Acerca de">
-    <h2>ACERCA DE</h2>
+    <h2 id="AcercaDe">Acerca de</h2>
     <p>Desde nuestra fundación en 2025, nos hemos comprometido a ser un lugar de encuentro para amantes de los libros, un espacio donde el conocimiento y la imaginación se encuentran. Con el paso de los años, hemos crecido, pero siempre hemos mantenido nuestra misión de ofrecer calidad, atención personalizada y una experiencia única para cada visitante.</p>
-  </section>
 
-  <section>
-    <p>En nuestra librería encontrarás una amplia variedad de libros, desde novelas clásicas hasta las últimas novedades del mercado. Disfruta de un ambiente tranquilo para leer o encontrar el libro perfecto para tu próximo viaje literario.</p>
-
-    <h2>Algunos de nuestros géneros más populares:</h2>
+    <h2>Géneros más populares</h2>
     <ul>
       <li>Ficción</li>
       <li>Ciencia Ficción</li>
@@ -207,22 +174,57 @@
         <td>$20.00</td>
       </tr>
     </table>
-  </section>
 
-  <section id="Contacto">
-    <h2>Contacto</h2>
-    <p><strong>Gabriel B</strong><br />
-      Teléfono: <a href="tel:+593962678882">0962678882</a><br />
+    <h2 id="Contacto">Contacto</h2>
+    <p><strong>Gabriel B</strong><br>
+      Teléfono: <a href="tel:+593962678882">0962678882</a><br>
       Correo: <a href="mailto:lgbonilla2@espe.edu.ec">lgbonilla2@espe.edu.ec</a>
     </p>
-    <p><strong>Luis B</strong><br />
-      Teléfono: <a href="tel:+593962678882">0962678882</a><br />
+
+    <p><strong>Luis B</strong><br>
+      Teléfono: <a href="tel:+593962678882">0962678882</a><br>
       Correo: <a href="mailto:bonillagabriel1307@gmail.com">bonillagabriel1307@gmail.com</a>
     </p>
-  </section>
+  </article>
+</section>
+<h2>Formulario de solicitud de libros</h2>
+<p>Completa el siguiente formulario para solicitar o reservar un libro en nuestra librería:</p>
 
-  <footer>
-    <p>© 2025 Librería</p>
-  </footer>
+<form action="#" method="post" style="background:#b3d9ff; padding:20px; border-radius:8px; max-width:500px;">
+  <label for="nombre"><strong>Nombre completo:</strong></label><br>
+  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required><br><br>
+
+  <label for="email"><strong>Correo electrónico:</strong></label><br>
+  <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required><br><br>
+
+  <label for="telefono"><strong>Teléfono:</strong></label><br>
+  <input type="tel" id="telefono" name="telefono" placeholder="+593..." required><br><br>
+
+  <label for="titulo"><strong>Título del libro:</strong></label><br>
+  <input type="text" id="titulo" name="titulo" placeholder="Ej: Cien años de soledad" required><br><br>
+
+  <label><strong>Formato preferido:</strong></label><br>
+  <input type="radio" id="fisico" name="formato" value="físico" checked>
+  <label for="fisico">Físico</label><br>
+  <input type="radio" id="digital" name="formato" value="digital">
+  <label for="digital">Digital</label><br><br>
+
+  <label for="cantidad"><strong>Cantidad:</strong></label><br>
+  <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1"><br><br>
+
+  <label for="fecha"><strong>Fecha deseada de retiro o entrega:</strong></label><br>
+  <input type="date" id="fecha" name="fecha"><br><br>
+
+  <label for="comentarios"><strong>Comentarios adicionales:</strong></label><br>
+  <textarea id="comentarios" name="comentarios" rows="3" cols="40" placeholder="Detalles de tu pedido..."></textarea><br><br>
+
+  <input type="submit" value="Enviar solicitud" style="background:#0077cc; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+  <input type="reset" value="Borrar" style="background:#ff6666; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+</form>
+
+<footer>
+  <p>© 2025 Librería</p>
+</footer>
+
 </body>
 </html>
