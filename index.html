@@ -1,238 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<title>Librería</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="Imagen/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería - Bootstrap</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #e6f7ff;
-  color: #222;
-  margin: 0;
-}
-
-/* Encabezado */
-header {
-  background-color: #3da9fc;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  font-weight: bold;
-  border-bottom: 4px solid #0077cc;
-}
-
-/* Contenedor principal en Flexbox */
-section {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 20px;
-}
-
-/* Navegación lateral */
-nav {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  background: #80c1ff;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* Lista del menú */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  margin-bottom: 15px;
-}
-
-nav ul li a {
-  color: #003f7f;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-  color: #001f3f;
-}
-
-/* Contenido principal */
-article {
-  flex: 3;
-  background-color: #cce6ff;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-/* Tabla de precios */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid #004a99;
-  padding: 8px 12px;
-  text-align: left;
-}
-
-th {
-  background-color: #3399ff;
-  color: white;
-}
-
-/* Pie de página */
-footer {
-  background-color: #3da9fc;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-/* Diseño responsivo */
-@media (max-width: 800px) {
-  section {
-    flex-direction: column;
-  }
-
-  nav, article {
-    max-width: 100%;
-  }
-}
-
-</style>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-light">
 
-<header>
-  <h2>Bienvenido a mi sistema de librería</h2>
-</header>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3 shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">Librería</a>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#Inicio">Inicio</a></li>
-      <li><a href="#AcercaDe">Acerca de</a></li>
-      <li><a href="#Contacto">Contacto</a></li>
-      <li><a href="#Formulario de solicitud de libros">Formulario de solicitud de libros</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1 id="Inicio">Inicio</h1>
-    <img src="Imagen/Libros.jpg" alt="Portada de la librería" width="400">
-    <p>En nuestra librería, te ofrecemos una vasta selección de libros, artículos y revistas para todos los gustos y edades. Ya sea que busques novedades literarias, clásicos o temas especializados, tenemos algo para ti. Nos apasiona fomentar el hábito de la lectura y brindar un espacio donde cada lector pueda encontrar su próxima gran historia.</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <h2 id="AcercaDe">Acerca de</h2>
-    <p>Desde nuestra fundación en 2025, nos hemos comprometido a ser un lugar de encuentro para amantes de los libros, un espacio donde el conocimiento y la imaginación se encuentran. Con el paso de los años, hemos crecido, pero siempre hemos mantenido nuestra misión de ofrecer calidad, atención personalizada y una experiencia única para cada visitante.</p>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item"><a class="nav-link" href="#Inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Acerca">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Formulario">Solicitud de libros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <h2>Géneros más populares</h2>
-    <ul>
-      <li>Ficción</li>
-      <li>Ciencia Ficción</li>
-      <li>Fantasía</li>
-      <li>Historia</li>
-      <li>Psicología</li>
-    </ul>
+    <!-- HERO / PORTADA -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1 class="fw-bold">Bienvenido a mi sistema de librería</h1>
+        <p class="fs-4 mt-2">Encuentra tu próximo gran libro con nosotros</p>
+    </header>
 
-    <h2>Precios de los libros más vendidos</h2>
-    <table>
-      <tr>
-        <th>Libro</th>
-        <th>Autor</th>
-        <th>Precio</th>
-      </tr>
-      <tr>
-        <td>El Quijote</td>
-        <td>Miguel de Cervantes</td>
-        <td>$15.00</td>
-      </tr>
-      <tr>
-        <td>1984</td>
-        <td>George Orwell</td>
-        <td>$12.50</td>
-      </tr>
-      <tr>
-        <td>Harry Potter</td>
-        <td>J.K. Rowling</td>
-        <td>$20.00</td>
-      </tr>
-    </table>
+    <div class="container my-5">
 
-    <h2 id="Contacto">Contacto</h2>
-    <p><strong>Gabriel B</strong><br>
-      Teléfono: <a href="tel:+593962678882">0962678882</a><br>
-      Correo: <a href="mailto:lgbonilla2@espe.edu.ec">lgbonilla2@espe.edu.ec</a>
-    </p>
+        <div class="row g-4">
 
-    <p><strong>Luis B</strong><br>
-      Teléfono: <a href="tel:+593962678882">0962678882</a><br>
-      Correo: <a href="mailto:bonillagabriel1307@gmail.com">bonillagabriel1307@gmail.com</a>
-    </p>
+            <!-- MENÚ LATERAL -->
+            <aside class="col-lg-3 col-md-4 col-12">
+                <div class="list-group shadow-lg">
+                    <a href="#Inicio" class="list-group-item list-group-item-action active">Inicio</a>
+                    <a href="#Acerca" class="list-group-item list-group-item-action">Acerca de</a>
+                    <a href="#Contacto" class="list-group-item list-group-item-action">Contacto</a>
+                    <a href="#Formulario" class="list-group-item list-group-item-action">Formulario de solicitud</a>
+                </div>
+            </aside>
 
-    <h2 id="Formulario de solicitud de libros">Formulario de solicitud de libros</h2>
-    <p>Completa el siguiente formulario para solicitar o reservar un libro en nuestra librería:</p>
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="col-lg-9 col-md-8 col-12">
 
-    <form action="#" method="post" style="background:#b3d9ff; padding:20px; border-radius:8px; max-width:500px;">
-  <label for="nombre"><strong>Nombre completo:</strong></label><br>
-  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required><br><br>
+                <!-- INICIO -->
+                <div id="Inicio" class="card shadow-lg p-4 mb-4">
+                    <h2 class="fw-bold">Inicio</h2>
+                    <img src="Imagen/Libros.jpg" class="img-fluid rounded my-3" alt="Portada">
+                    <p class="fs-5">En nuestra librería te ofrecemos una vasta selección de libros, artículos y revistas para todos los gustos y edades...</p>
+                </div>
 
-  <label for="email"><strong>Correo electrónico:</strong></label><br>
-  <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required><br><br>
+                <!-- ACERCA DE -->
+                <div id="Acerca" class="card shadow-lg p-4 mb-4">
+                    <h2 class="fw-bold">Acerca de</h2>
+                    <p class="fs-5">Desde nuestra fundación en 2025, nos hemos comprometido a ser un lugar de encuentro para amantes de los libros...</p>
 
-  <label for="telefono"><strong>Teléfono:</strong></label><br>
-  <input type="tel" id="telefono" name="telefono" placeholder="+593..." required><br><br>
+                    <h4 class="mt-3">Géneros más populares</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">Ficción</li>
+                        <li class="list-group-item">Ciencia Ficción</li>
+                        <li class="list-group-item">Fantasía</li>
+                        <li class="list-group-item">Historia</li>
+                        <li class="list-group-item">Psicología</li>
+                    </ul>
+                </div>
 
-  <label for="titulo"><strong>Título del libro:</strong></label><br>
-  <input type="text" id="titulo" name="titulo" placeholder="Ej: Cien años de soledad" required><br><br>
+                <!-- TABLA DE PRECIOS -->
+                <div class="card shadow-lg p-4 mb-4">
+                    <h3 class="fw-bold">Precios de los libros más vendidos</h3>
 
-  <label><strong>Formato preferido:</strong></label><br>
-  <input type="radio" id="fisico" name="formato" value="físico" checked>
-  <label for="fisico">Físico</label><br>
-  <input type="radio" id="digital" name="formato" value="digital">
-  <label for="digital">Digital</label><br><br>
+                    <table class="table table-striped table-hover mt-3">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Libro</th>
+                                <th>Autor</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>El Quijote</td><td>Miguel de Cervantes</td><td>$15.00</td></tr>
+                            <tr><td>1984</td><td>George Orwell</td><td>$12.50</td></tr>
+                            <tr><td>Harry Potter</td><td>J.K. Rowling</td><td>$20.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
-  <label for="cantidad"><strong>Cantidad:</strong></label><br>
-  <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1"><br><br>
+                <!-- CONTACTO -->
+                <div id="Contacto" class="card shadow-lg p-4 mb-4">
+                    <h2 class="fw-bold">Contacto</h2>
+                    <p class="fs-5"><strong>Gabriel B</strong><br>
+                        Teléfono: <a href="tel:0962678882">0962678882</a><br>
+                        Correo: <a href="mailto:lgbonilla2@espe.edu.ec">lgbonilla2@espe.edu.ec</a>
+                    </p>
 
-  <label for="fecha"><strong>Fecha deseada de retiro o entrega:</strong></label><br>
-  <input type="date" id="fecha" name="fecha"><br><br>
+                    <p class="fs-5"><strong>Luis B</strong><br>
+                        Teléfono: <a href="tel:0962678882">0962678882</a><br>
+                        Correo: <a href="mailto:bonillagabriel1307@gmail.com">bonillagabriel1307@gmail.com</a>
+                    </p>
+                </div>
 
-  <label for="comentarios"><strong>Comentarios adicionales:</strong></label><br>
-  <textarea id="comentarios" name="comentarios" rows="3" cols="40" placeholder="Detalles de tu pedido..."></textarea><br><br>
+                <!-- FORMULARIO -->
+                <div id="Formulario" class="card shadow-lg p-4 mb-4">
+                    <h2 class="fw-bold mb-3">Formulario de solicitud de libros</h2>
 
-  <input type="submit" value="Enviar solicitud" style="background:#0077cc; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
-  <input type="reset" value="Borrar" style="background:#ff6666; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
-</form>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" required>
+                        </div>
 
-  </article>
+                        <div class="col-md-6">
+                            <label class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" required>
+                        </div>
 
-  
-</section>
+                        <div class="col-md-6">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Título del libro</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label d-block">Formato preferido</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" checked>
+                                <label class="form-check-label">Físico</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio">
+                                <label class="form-check-label">Digital</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" min="1" value="1">
+                        </div>
+
+                        <div class="col-md-8">
+                            <label class="form-label">Fecha deseada</label>
+                            <input type="date" class="form-control">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Comentarios</label>
+                            <textarea rows="3" class="form-control"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary">Enviar solicitud</button>
+                            <button class="btn btn-danger" type="reset">Borrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3">
+        © 2025 Librería
+    </footer>
 
 
-
-<footer>
-  <p>© 2025 Librería</p>
-</footer>
 
 </body>
+
 </html>
